@@ -3,11 +3,11 @@ import { useState } from 'react';
 
 interface HeaderProps {
   onNavigateHome: () => void;
-  onNavigateToDocumentation: () => void;
+  onNavigateToServices: () => void;
   onNavigateToFunctions: () => void;
 }
 
-export default function Header({ onNavigateHome, onNavigateToDocumentation, onNavigateToFunctions }: HeaderProps) {
+export default function Header({ onNavigateHome, onNavigateToServices, onNavigateToFunctions }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [incorporationOpen, setIncorporationOpen] = useState(false);
   const [iprOpen, setIprOpen] = useState(false);
@@ -54,7 +54,7 @@ export default function Header({ onNavigateHome, onNavigateToDocumentation, onNa
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <button onClick={onNavigateHome} className="text-2xl font-bold text-gray-900 hover:text-red-600 transition-colors">
+            <button onClick={onNavigateHome} className="text-2xl font-bold text-gray-900 hover:text-emerald-600 transition-colors">
               Deeproots Advisory
             </button>
           </div>
@@ -62,7 +62,7 @@ export default function Header({ onNavigateHome, onNavigateToDocumentation, onNa
           <div className="hidden lg:flex items-center space-x-8">
             <div className="relative group">
               <button
-                className="flex items-center text-gray-700 hover:text-red-600 transition-colors py-2"
+                className="flex items-center text-gray-700 hover:text-emerald-600 transition-colors py-2"
                 onMouseEnter={() => setIncorporationOpen(true)}
                 onMouseLeave={() => setIncorporationOpen(false)}
               >
@@ -79,7 +79,7 @@ export default function Header({ onNavigateHome, onNavigateToDocumentation, onNa
                   {incorporationItems.map((item, idx) => (
                     <button
                       key={idx}
-                      className="w-full text-left px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                      className="w-full text-left px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors"
                     >
                       {item}
                     </button>
@@ -90,7 +90,7 @@ export default function Header({ onNavigateHome, onNavigateToDocumentation, onNa
 
             <div className="relative group">
               <button
-                className="flex items-center text-gray-700 hover:text-red-600 transition-colors py-2"
+                className="flex items-center text-gray-700 hover:text-emerald-600 transition-colors py-2"
                 onMouseEnter={() => setIprOpen(true)}
                 onMouseLeave={() => setIprOpen(false)}
               >
@@ -107,7 +107,7 @@ export default function Header({ onNavigateHome, onNavigateToDocumentation, onNa
                   {iprItems.map((item, idx) => (
                     <button
                       key={idx}
-                      className="w-full text-left px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                      className="w-full text-left px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors"
                     >
                       {item}
                     </button>
@@ -118,7 +118,7 @@ export default function Header({ onNavigateHome, onNavigateToDocumentation, onNa
 
             <div className="relative group">
               <button
-                className="flex items-center text-gray-700 hover:text-red-600 transition-colors py-2"
+                className="flex items-center text-gray-700 hover:text-emerald-600 transition-colors py-2"
                 onMouseEnter={() => setTaxesOpen(true)}
                 onMouseLeave={() => setTaxesOpen(false)}
               >
@@ -140,7 +140,7 @@ export default function Header({ onNavigateHome, onNavigateToDocumentation, onNa
                       {section.items.map((item, itemIdx) => (
                         <button
                           key={itemIdx}
-                          className="w-full text-left px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                          className="w-full text-left px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors"
                         >
                           {item}
                         </button>
@@ -153,7 +153,7 @@ export default function Header({ onNavigateHome, onNavigateToDocumentation, onNa
 
             <div className="relative group">
               <button
-                className="flex items-center text-gray-700 hover:text-red-600 transition-colors py-2"
+                className="flex items-center text-gray-700 hover:text-emerald-600 transition-colors py-2"
                 onMouseEnter={() => setCompliancesOpen(true)}
                 onMouseLeave={() => setCompliancesOpen(false)}
               >
@@ -170,7 +170,7 @@ export default function Header({ onNavigateHome, onNavigateToDocumentation, onNa
                   {compliancesItems.map((item, idx) => (
                     <button
                       key={idx}
-                      className="w-full text-left px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-red-600 transition-colors"
+                      className="w-full text-left px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 transition-colors"
                     >
                       {item}
                     </button>
@@ -180,10 +180,10 @@ export default function Header({ onNavigateHome, onNavigateToDocumentation, onNa
             </div>
 
             <button
-              onClick={onNavigateToDocumentation}
-              className="text-gray-700 hover:text-red-600 transition-colors"
+              onClick={onNavigateToServices}
+              className="text-gray-700 hover:text-emerald-600 transition-colors"
             >
-              Learning center
+              Services
             </button>
           </div>
 
@@ -198,14 +198,14 @@ export default function Header({ onNavigateHome, onNavigateToDocumentation, onNa
         {mobileMenuOpen && (
           <div className="lg:hidden pb-4">
             <div className="flex flex-col space-y-3">
-              <button onClick={onNavigateHome} className="text-gray-700 hover:text-red-600 transition-colors text-left">
+              <button onClick={onNavigateHome} className="text-gray-700 hover:text-emerald-600 transition-colors text-left">
                 Home
               </button>
-              <button onClick={onNavigateToFunctions} className="text-gray-700 hover:text-red-600 transition-colors text-left">
-                All Services
+              <button onClick={onNavigateToFunctions} className="text-gray-700 hover:text-emerald-600 transition-colors text-left">
+                All Functions
               </button>
-              <button onClick={onNavigateToDocumentation} className="text-gray-700 hover:text-red-600 transition-colors text-left">
-                Learning Center
+              <button onClick={onNavigateToServices} className="text-gray-700 hover:text-emerald-600 transition-colors text-left">
+                Services
               </button>
             </div>
           </div>

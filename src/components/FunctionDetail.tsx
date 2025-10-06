@@ -15,11 +15,11 @@ export default function FunctionDetail({ functionData, onBack }: FunctionDetailP
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-gradient-to-br from-red-500 to-orange-500 text-white py-12">
+      <div className="bg-gradient-to-br from-emerald-500 to-green-500 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
             onClick={onBack}
-            className="flex items-center text-white hover:text-red-100 mb-6 transition-colors"
+            className="flex items-center text-white hover:text-emerald-100 mb-6 transition-colors"
           >
             <ArrowLeft className="h-5 w-5 mr-2" />
             Back to Services
@@ -31,9 +31,9 @@ export default function FunctionDetail({ functionData, onBack }: FunctionDetailP
               </div>
             )}
             <div>
-              <div className="text-sm text-red-100 mb-2">{functionData.category}</div>
+              <div className="text-sm text-emerald-100 mb-2">{functionData.category}</div>
               <h1 className="text-5xl font-bold mb-3">{functionData.title}</h1>
-              <p className="text-xl text-red-100">{functionData.shortDescription}</p>
+              <p className="text-xl text-emerald-100">{functionData.shortDescription}</p>
             </div>
           </div>
         </div>
@@ -52,14 +52,14 @@ export default function FunctionDetail({ functionData, onBack }: FunctionDetailP
               <div className="grid md:grid-cols-2 gap-4">
                 {functionData.keyFeatures.map((feature, index) => (
                   <div key={index} className="flex items-start">
-                    <CheckCircle className="h-6 w-6 text-red-600 mr-3 mt-0.5 flex-shrink-0" />
+                    <CheckCircle className="h-6 w-6 text-emerald-600 mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 font-medium">{feature}</span>
                   </div>
                 ))}
               </div>
             </section>
 
-            <section className="bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-md p-8 border-2 border-red-100">
+            <section className="bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-md p-8 border-2 border-emerald-100">
               <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
                 Documents Required for {functionData.title}
               </h2>
@@ -76,8 +76,8 @@ export default function FunctionDetail({ functionData, onBack }: FunctionDetailP
                       className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
                     >
                       <div className="flex flex-col items-center text-center">
-                        <div className="bg-red-100 p-4 rounded-lg mb-4">
-                          {DocIcon && <DocIcon className="h-10 w-10 text-red-600" />}
+                        <div className="bg-emerald-100 p-4 rounded-lg mb-4">
+                          {DocIcon && <DocIcon className="h-10 w-10 text-emerald-600" />}
                         </div>
                         <h3 className="text-lg font-bold text-gray-900 mb-2">{doc.title}</h3>
                         <p className="text-gray-600 text-sm">{doc.description}</p>
@@ -94,7 +94,7 @@ export default function FunctionDetail({ functionData, onBack }: FunctionDetailP
                 {functionData.processSteps.map((step, index) => (
                   <div key={index} className="flex">
                     <div className="flex-shrink-0 mr-6">
-                      <div className="bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg">
+                      <div className="bg-emerald-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg">
                         {step.step}
                       </div>
                     </div>
@@ -102,7 +102,7 @@ export default function FunctionDetail({ functionData, onBack }: FunctionDetailP
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-xl font-bold text-gray-900">{step.title}</h3>
                         {step.duration && (
-                          <span className="text-sm text-red-600 font-semibold bg-red-50 px-3 py-1 rounded-full">
+                          <span className="text-sm text-emerald-600 font-semibold bg-emerald-50 px-3 py-1 rounded-full">
                             {step.duration}
                           </span>
                         )}
@@ -121,8 +121,8 @@ export default function FunctionDetail({ functionData, onBack }: FunctionDetailP
               <h2 className="text-3xl font-bold text-gray-900 mb-6">What You Get</h2>
               <div className="grid md:grid-cols-2 gap-4">
                 {functionData.deliverables.map((deliverable, index) => (
-                  <div key={index} className="flex items-start bg-red-50 rounded-lg p-4">
-                    <CheckCircle className="h-5 w-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <div key={index} className="flex items-start bg-emerald-50 rounded-lg p-4">
+                    <CheckCircle className="h-5 w-5 text-emerald-600 mr-3 mt-0.5 flex-shrink-0" />
                     <span className="text-gray-700 font-medium">{deliverable}</span>
                   </div>
                 ))}
@@ -134,7 +134,7 @@ export default function FunctionDetail({ functionData, onBack }: FunctionDetailP
               <div className="grid md:grid-cols-2 gap-4">
                 {functionData.benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start">
-                    <div className="w-2 h-2 bg-red-600 rounded-full mr-3 mt-2"></div>
+                    <div className="w-2 h-2 bg-emerald-600 rounded-full mr-3 mt-2"></div>
                     <span className="text-gray-700">{benefit}</span>
                   </div>
                 ))}
@@ -152,7 +152,7 @@ export default function FunctionDetail({ functionData, onBack }: FunctionDetailP
                     >
                       <h3 className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
                       {expandedFAQ === index ? (
-                        <ChevronUp className="h-5 w-5 text-red-600 flex-shrink-0" />
+                        <ChevronUp className="h-5 w-5 text-emerald-600 flex-shrink-0" />
                       ) : (
                         <ChevronDown className="h-5 w-5 text-gray-400 flex-shrink-0" />
                       )}
@@ -172,14 +172,14 @@ export default function FunctionDetail({ functionData, onBack }: FunctionDetailP
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Service Details</h3>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <Clock className="h-5 w-5 text-red-600 mr-3 mt-0.5" />
+                    <Clock className="h-5 w-5 text-emerald-600 mr-3 mt-0.5" />
                     <div>
                       <div className="text-sm text-gray-600">Timeline</div>
                       <div className="font-semibold text-gray-900">{functionData.timeline}</div>
                     </div>
                   </div>
                   <div className="flex items-start">
-                    <DollarSign className="h-5 w-5 text-red-600 mr-3 mt-0.5" />
+                    <DollarSign className="h-5 w-5 text-emerald-600 mr-3 mt-0.5" />
                     <div>
                       <div className="text-sm text-gray-600">Pricing</div>
                       <div className="font-semibold text-gray-900">{functionData.pricing}</div>
@@ -188,15 +188,15 @@ export default function FunctionDetail({ functionData, onBack }: FunctionDetailP
                 </div>
               </div>
 
-              <div className="bg-red-500 rounded-xl shadow-md p-6 text-white">
+              <div className="bg-emerald-500 rounded-xl shadow-md p-6 text-white">
                 <h3 className="text-xl font-bold mb-4">Ready to Get Started?</h3>
-                <p className="mb-6 text-red-100">
+                <p className="mb-6 text-emerald-100">
                   Our experts are here to help you every step of the way. Let's begin your journey!
                 </p>
-                <button className="w-full bg-white text-red-600 px-6 py-3 rounded-lg hover:bg-red-50 transition-colors font-semibold mb-3">
+                <button className="w-full bg-white text-emerald-600 px-6 py-3 rounded-lg hover:bg-emerald-50 transition-colors font-semibold mb-3">
                   Get Started Now
                 </button>
-                <button className="w-full border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold">
+                <button className="w-full border-2 border-white text-white px-6 py-3 rounded-lg hover:bg-emerald-600 transition-colors font-semibold">
                   Schedule Consultation
                 </button>
               </div>

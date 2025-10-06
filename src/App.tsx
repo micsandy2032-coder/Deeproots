@@ -18,16 +18,16 @@ import { functionsData } from './data/functionsData';
 import { DocumentationType } from './types/documentation';
 import { FunctionType } from './types/function';
 
-type ViewType = 'home' | 'documentation-list' | 'documentation-detail' | 'function-list' | 'function-detail';
+type ViewType = 'home' | 'services-list' | 'services-detail' | 'function-list' | 'function-detail';
 
 function App() {
   const [currentView, setCurrentView] = useState<ViewType>('home');
-  const [selectedDoc, setSelectedDoc] = useState<DocumentationType | null>(null);
+  const [selectedService, setSelectedService] = useState<DocumentationType | null>(null);
   const [selectedFunction, setSelectedFunction] = useState<FunctionType | null>(null);
 
-  const handleSelectDoc = (doc: DocumentationType) => {
-    setSelectedDoc(doc);
-    setCurrentView('documentation-detail');
+  const handleSelectService = (service: DocumentationType) => {
+    setSelectedService(service);
+    setCurrentView('services-detail');
     window.scrollTo(0, 0);
   };
 
@@ -37,9 +37,9 @@ function App() {
     window.scrollTo(0, 0);
   };
 
-  const handleBackToDocList = () => {
-    setCurrentView('documentation-list');
-    setSelectedDoc(null);
+  const handleBackToServicesList = () => {
+    setCurrentView('services-list');
+    setSelectedService(null);
     window.scrollTo(0, 0);
   };
 
@@ -49,8 +49,8 @@ function App() {
     window.scrollTo(0, 0);
   };
 
-  const handleNavigateToDocumentation = () => {
-    setCurrentView('documentation-list');
+  const handleNavigateToServices = () => {
+    setCurrentView('services-list');
     window.scrollTo(0, 0);
   };
 
@@ -64,15 +64,15 @@ function App() {
     window.scrollTo(0, 0);
   };
 
-  if (currentView === 'documentation-list') {
+  if (currentView === 'services-list') {
     return (
       <div className="min-h-screen bg-white">
         <Header
           onNavigateHome={handleNavigateHome}
-          onNavigateToDocumentation={handleNavigateToDocumentation}
+          onNavigateToServices={handleNavigateToServices}
           onNavigateToFunctions={handleNavigateToFunctions}
         />
-        <DocumentationList documentations={documentationData} onSelectDoc={handleSelectDoc} />
+        <DocumentationList documentations={documentationData} onSelectDoc={handleSelectService} />
         <Footer />
         <WhatsAppButton />
         <TalkToUsButton />
@@ -81,15 +81,15 @@ function App() {
     );
   }
 
-  if (currentView === 'documentation-detail' && selectedDoc) {
+  if (currentView === 'services-detail' && selectedService) {
     return (
       <div className="min-h-screen bg-white">
         <Header
           onNavigateHome={handleNavigateHome}
-          onNavigateToDocumentation={handleNavigateToDocumentation}
+          onNavigateToServices={handleNavigateToServices}
           onNavigateToFunctions={handleNavigateToFunctions}
         />
-        <DocumentationDetail documentation={selectedDoc} onBack={handleBackToDocList} />
+        <DocumentationDetail documentation={selectedService} onBack={handleBackToServicesList} />
         <Footer />
         <WhatsAppButton />
         <TalkToUsButton />
@@ -103,7 +103,7 @@ function App() {
       <div className="min-h-screen bg-white">
         <Header
           onNavigateHome={handleNavigateHome}
-          onNavigateToDocumentation={handleNavigateToDocumentation}
+          onNavigateToServices={handleNavigateToServices}
           onNavigateToFunctions={handleNavigateToFunctions}
         />
         <FunctionList functions={functionsData} onSelectFunction={handleSelectFunction} />
@@ -120,7 +120,7 @@ function App() {
       <div className="min-h-screen bg-white">
         <Header
           onNavigateHome={handleNavigateHome}
-          onNavigateToDocumentation={handleNavigateToDocumentation}
+          onNavigateToServices={handleNavigateToServices}
           onNavigateToFunctions={handleNavigateToFunctions}
         />
         <FunctionDetail functionData={selectedFunction} onBack={handleBackToFunctionList} />
@@ -136,11 +136,11 @@ function App() {
     <div className="min-h-screen bg-white">
       <Header
         onNavigateHome={handleNavigateHome}
-        onNavigateToDocumentation={handleNavigateToDocumentation}
+        onNavigateToServices={handleNavigateToServices}
         onNavigateToFunctions={handleNavigateToFunctions}
       />
-      <Hero onNavigateToDocumentation={handleNavigateToDocumentation} onNavigateToFunctions={handleNavigateToFunctions} />
-      <Services onNavigateToDocumentation={handleNavigateToDocumentation} onNavigateToFunctions={handleNavigateToFunctions} />
+      <Hero onNavigateToServices={handleNavigateToServices} onNavigateToFunctions={handleNavigateToFunctions} />
+      <Services onNavigateToServices={handleNavigateToServices} onNavigateToFunctions={handleNavigateToFunctions} />
       <ValueProposition />
       <Testimonials />
       <Contact />

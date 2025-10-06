@@ -8,7 +8,7 @@ export default function FeedbackButton() {
   return (
     <button
       onClick={handleClick}
-      className="fixed top-1/2 right-0 -translate-y-1/2 mt-32 z-40 bg-red-500 hover:bg-red-600 text-white py-8 px-4 rounded-l-lg shadow-lg transition-all writing-mode-vertical transform hover:scale-105"
+      className="fixed top-1/2 right-0 -translate-y-1/2 mt-32 z-40 bg-emerald-600 hover:bg-emerald-700 text-white py-8 px-4 rounded-l-lg shadow-lg transition-all writing-mode-vertical transform hover:scale-105"
       style={{ writingMode: 'vertical-rl' }}
       aria-label="Feedback"
     >

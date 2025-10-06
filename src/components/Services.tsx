@@ -40,10 +40,10 @@ const services = [
 ];
 
 interface ServicesProps {
-  onNavigateToDocumentation: () => void;
+  onNavigateToServices: () => void;
 }
 
-export default function Services({ onNavigateToDocumentation }: ServicesProps) {
+export default function Services({ onNavigateToServices }: ServicesProps) {
   return (
     <section id="services" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,7 +53,7 @@ export default function Services({ onNavigateToDocumentation }: ServicesProps) {
             Comprehensive advisory services tailored to your business needs
           </p>
           <button
-            onClick={onNavigateToDocumentation}
+            onClick={onNavigateToServices}
             className="mt-6 inline-flex items-center text-emerald-600 hover:text-emerald-700 font-semibold transition-colors"
           >
             View All Documentation & Guides →
